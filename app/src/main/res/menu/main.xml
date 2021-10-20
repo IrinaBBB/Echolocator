@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/frequency_200"
+            android:title="@string/_200_hz" android:checked="true"/>
+        <item android:id="@+id/frequency_350"
+            android:title="@string/_350_hz"/>
+        <item android:id="@+id/frequency_500"
+            android:title="@string/_500_hz"/>
+    </group>
+</menu>

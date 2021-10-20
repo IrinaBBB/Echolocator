@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Echolocator</string>
     <string name="start">Start</string>
+    <string name="_200_hz">200 Hz</string>
+    <string name="_350_hz">350 Hz</string>
+    <string name="_500_hz">500 Hz</string>
 </resources>

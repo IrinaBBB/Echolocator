@@ -4,7 +4,11 @@ import android.media.AudioFormat;
 import android.media.AudioManager;
 import android.media.AudioTrack;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.github.mikephil.charting.charts.LineChart;
@@ -22,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     final int duration = 5; // duration of sound
     final int sampleRate = 22050; // Hz (maximum frequency is 7902.13Hz (B8))
-    final int freqInHz = 350; // Hz (maximum frequency is 7902.13Hz (B8))
+    int freqInHz = 200; // Hz (maximum frequency is 7902.13Hz (B8))
     final int numSamples = duration * sampleRate;
     final double[] samples = new double[numSamples];
     final short[] buffer = new short[numSamples];
@@ -74,5 +78,34 @@ public class MainActivity extends AppCompatActivity {
                     (float) Math.sin(freqInHz * 2 * Math.PI * i / (sampleRate))));
         }
         return dataValues;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.frequency_200:
+                item.setChecked(!item.isChecked());
+                freqInHz = 200;
+                createGraph();
+                break;
+            case R.id.frequency_350:
+                item.setChecked(!item.isChecked());
+                freqInHz = 350;
+                createGraph();
+                break;
+            case R.id.frequency_500:
+                item.setChecked(!item.isChecked());
+                freqInHz = 500;
+                createGraph();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
