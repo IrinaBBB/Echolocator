@@ -4,4 +4,17 @@
     <string name="_200_hz">200 Hz</string>
     <string name="_350_hz">350 Hz</string>
     <string name="_500_hz">500 Hz</string>
+
+    <string name="play">Play</string>
+    <string name="zerovalues">0, 0, 0</string>
+    <string name="notmeasured">0.0 cm</string>
+    <string name="distance">Distance:</string>
+    <string name="room">Room</string>
+    <string name="graph">Graph</string>
+    <string name="magnetic_field">Magnetic Field:</string>
+    <string name="calculated_distance">Calculated Distance (cm):</string>
+    <string name="_00_00">00.00</string>
+    <string name="distance_value">%.3f</string>
+    <string name="button_stop_label">Stop</string>
+    <string name="button_start_label">Start</string>
 </resources>

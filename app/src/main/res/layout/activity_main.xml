@@ -3,31 +3,57 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-
-    <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/line_chart_up"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/button_start"
+    <TextView
+        android:id="@+id/calculated_distance_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
+        android:text="@string/calculated_distance"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/calculated_distance_text_view"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
 
-    </com.github.mikephil.charting.charts.LineChart>
+    <TextView
+        android:id="@+id/calculated_distance_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:text="@string/_00_00"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/ivGraph"
+        app:layout_constraintEnd_toEndOf="@+id/calculated_distance_label"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/calculated_distance_label"
+        app:layout_constraintTop_toBottomOf="@+id/calculated_distance_label"
+        app:layout_constraintVertical_bias="0.144" />
+
+    <ImageView
+        android:id="@+id/ivGraph"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/black"
+        android:contentDescription="@string/graph"
+        app:layout_constraintBottom_toTopOf="@+id/playSound" />
 
     <Button
-        android:id="@+id/button_start"
+        android:id="@+id/playSound"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/start"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/play"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
